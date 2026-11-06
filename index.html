@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#fffaf6">
+<title>by Kenzhibaevna — центр эстетической красоты</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fffaf6;--milk:#f6eee6;--beige:#e9d9c8;--pink:#f3d9d6;--rose:#c98b8b;--text:#3a2a24;--muted:#7b6a62;--r:22px;--sh:0 10px 30px rgba(90,60,45,.10)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.15}
+h1{font-size:clamp(38px,6vw,68px)}h2{font-size:clamp(30px,4.5vw,46px);margin-bottom:12px}h3{font-size:26px}
+section{padding:80px 20px}.wrap{max-width:1140px;margin:0 auto}
+.sub{color:var(--muted);max-width:680px;margin-bottom:34px}
+.tag{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--rose);margin-bottom:10px;display:block}
+.btn{display:inline-block;border:0;cursor:pointer;font:500 15px Inter,sans-serif;padding:14px 28px;border-radius:50px;background:var(--text);color:#fff;text-decoration:none;transition:.3s}
+.btn:hover{transform:translateY(-3px);box-shadow:var(--sh);background:#55392f}
+.btn.alt{background:transparent;color:var(--text);border:1px solid var(--text)}.btn.alt:hover{background:var(--pink)}
+header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,250,246,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--beige)}
+.nav{max-width:1140px;margin:0 auto;height:68px;padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--text);text-decoration:none;display:inline-flex;align-items:baseline;gap:8px}.logo small{font-size:13px;font-weight:500;letter-spacing:.12em;text-transform:lowercase;color:var(--text)}
+.menu{display:flex;gap:24px;align-items:center}.menu a{color:var(--text);text-decoration:none;font-size:14px;transition:.2s}.menu a:hover{color:var(--rose)}
+.burger{display:none;background:none;border:0;width:40px;height:40px;cursor:pointer}
+.burger span{display:block;width:24px;height:2px;background:var(--text);margin:5px auto;transition:.3s}
+.hero{padding-top:110px;background:linear-gradient(135deg,var(--milk),var(--pink))}
+.hero .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:50px;align-items:center}
+.hero p{margin:20px 0 30px;color:var(--muted);font-size:18px}.hero .btns{display:flex;gap:14px;flex-wrap:wrap}
+.hero .ph{height:540px;border-radius:200px 200px var(--r) var(--r);overflow:hidden;box-shadow:var(--sh)}
+.adv{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:60px}
+.adv div{background:#fff;padding:24px;border-radius:var(--r);box-shadow:var(--sh);transition:.3s}.adv div:hover{transform:translateY(-6px)}
+.adv b{display:block;font-family:'Cormorant Garamond',serif;font-size:22px;margin-bottom:4px}.adv span{font-size:14px;color:var(--muted)}
+.cat{display:grid;grid-template-columns:90px 1fr 1fr;gap:30px;align-items:center;padding:28px 0;border-top:1px solid var(--beige);text-decoration:none;color:inherit;transition:.3s}
+.cat:last-child{border-bottom:1px solid var(--beige)}.cat:hover{background:var(--milk);padding-left:16px}
+.cat .n{font-family:'Cormorant Garamond',serif;font-size:56px;color:var(--rose)}
+.cat .ph{height:220px;border-radius:var(--r);overflow:hidden}.igph{transition:transform .6s}.cat:hover .igph,.zoom:hover .igph{transform:scale(1.05)}
+.cat p{color:var(--muted)}.cat em{font-style:normal;color:var(--rose);font-size:14px;display:block;margin-top:10px}
+.alt-bg{background:var(--milk)}
+.ph{display:flex}.igph{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:20px;text-align:center;text-decoration:none;color:var(--text);background:linear-gradient(135deg,var(--pink),var(--beige))}
+.igph b{font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;font-weight:600}.igph small{font-size:13px;color:var(--rose)}
+.promo{display:flex;flex-wrap:wrap;align-items:center;gap:30px;background:#fff;border-radius:var(--r);padding:32px;box-shadow:var(--sh);margin-bottom:30px}
+.price{font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:600;color:var(--rose)}.old{text-decoration:line-through;color:var(--muted);font-size:24px;margin-left:10px}
+.list{list-style:none}.list li{padding:6px 0 6px 26px;position:relative}.list li:before{content:"✦";position:absolute;left:0;color:var(--rose);font-size:13px;top:9px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.card{background:#fff;border-radius:var(--r);box-shadow:var(--sh);overflow:hidden;transition:.35s;display:flex;flex-direction:column}.card:hover{transform:translateY(-8px)}
+.card .ph{height:230px;overflow:hidden}.card .b{padding:22px;flex:1}.card .b p{color:var(--muted);font-size:15px;margin-top:6px}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 24px}.chips span{padding:8px 18px;border-radius:50px;background:var(--pink);font-size:14px}
+.edu{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;background:#fff;border-radius:var(--r);box-shadow:var(--sh);overflow:hidden}
+.edu .ph{min-height:420px}.edu .b{padding:36px}
+.pr{width:100%;border-collapse:collapse;background:#fff;border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);margin:14px 0 26px}
+.pr td{padding:14px 20px;border-bottom:1px solid var(--beige)}.pr td:last-child{text-align:right;font-weight:600;white-space:nowrap}.pr tr:last-child td{border:0}
+.big{display:grid;grid-template-columns:1fr 1fr;background:#fff;border-radius:var(--r);box-shadow:var(--sh);overflow:hidden;margin-bottom:26px}
+.big .ph{min-height:320px;overflow:hidden}.big .b{padding:32px}.big .b p{color:var(--muted);margin:8px 0}
+.big .p{font-size:22px;font-weight:600;color:var(--rose);margin:10px 0}
+.note{background:var(--pink);border-radius:var(--r);padding:26px;margin-top:26px}.note h3{font-size:24px;margin-bottom:8px}
+form{background:#fff;padding:34px;border-radius:var(--r);box-shadow:var(--sh);display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{font-size:13px;color:var(--muted);display:block}label.full,form .full{grid-column:1/-1}
+input,select,textarea{width:100%;margin-top:6px;padding:13px 14px;border:1px solid var(--beige);border-radius:12px;font:inherit;background:var(--bg);color:var(--text)}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--rose);border-color:transparent}
+.rv{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
+@media(max-width:900px){
+.burger{display:block}
+.menu{position:fixed;top:68px;left:0;right:0;background:var(--bg);flex-direction:column;padding:20px;gap:18px;border-bottom:1px solid var(--beige);transform:translateY(-130%);transition:.4s;z-index:-1}
+.menu.open{transform:none}.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}.burger.open span:nth-child(2){opacity:0}.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.hero .wrap,.edu,.big,.grid2,form{grid-template-columns:1fr}.hero .ph{height:380px}
+.adv{grid-template-columns:1fr 1fr}.grid3{grid-template-columns:1fr}.cat{grid-template-columns:50px 1fr;gap:14px}.cat .ph,.cat div:last-child{grid-column:1/-1}.cat .n{font-size:40px}
+}
+@media(max-width:480px){.adv{grid-template-columns:1fr}form{padding:20px}}
+.qn{position:sticky;top:68px;z-index:40;background:rgba(255,250,246,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--beige);overflow-x:auto;white-space:nowrap;scrollbar-width:none;padding:10px 20px;display:flex;gap:10px;justify-content:center}
+.qn::-webkit-scrollbar{display:none}.qn a{padding:9px 18px;border-radius:50px;background:var(--milk);color:var(--text);text-decoration:none;font-size:14px;transition:.25s;flex:none}.qn a:hover,.qn a.on{background:var(--text);color:#fff}
+.menu a.on{color:var(--rose)}
+.cta{position:fixed;left:0;right:0;bottom:0;z-index:45;display:none;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(255,250,246,.96);backdrop-filter:blur(10px);border-top:1px solid var(--beige);gap:10px}
+.cta .btn{flex:1;text-align:center;padding:14px 10px}
+.up{position:fixed;right:16px;bottom:24px;width:46px;height:46px;border-radius:50%;border:0;background:var(--text);color:#fff;font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transition:.3s;z-index:44}.up.on{opacity:1;visibility:visible}
+@media(max-width:900px){.cta{display:flex}.up{bottom:84px;width:40px;height:40px;right:10px;font-size:17px}.up.on{opacity:.8}body{padding-bottom:72px}.qn{justify-content:flex-start}.btn,input,select,textarea{min-height:48px}}
+
+@media(max-width:900px){
+html{scroll-padding-top:130px}
+section{padding:50px 16px}.hero{padding-top:100px}
+h3{font-size:22px}.sub{margin-bottom:24px}
+.edu{gap:0}.edu .ph{min-height:220px}.edu .b{padding:22px}
+.big .ph{min-height:220px}.big .b{padding:22px}
+.promo{padding:22px;gap:16px}.price{font-size:44px}.old{font-size:20px}
+.pr td{padding:12px 14px;font-size:15px}
+.note{padding:20px}form{padding:22px}
+input,select,textarea{font-size:16px}
+.hero p{font-size:16px}.hero .btns .btn{flex:1;text-align:center}
+.cat:hover{padding-left:0}
+}
+@media(max-width:480px){.logo{font-size:22px}.nav{padding:0 14px}h1{font-size:34px}.cat .ph{height:180px}.card .ph{height:190px}.hero .ph{height:300px}}
+a,button{-webkit-tap-highlight-color:transparent}
+</style>
+</head>
+<body>
+<header><div class="nav">
+<a class="logo" href="#top" data-brand style="letter-spacing:.08em"><small>by</small>KENZHIBAEVNA</a>
+<nav class="menu" id="menu">
+<a href="#top">Главная</a><a href="#services">Услуги</a><a href="#education">Обучение</a><a href="#prices">Цены</a><a href="#contacts">Контакты</a>
+<a class="btn" href="#booking" style="color:#fff">Записаться</a></nav>
+<button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+</div></header>
+
+<nav class="qn" id="qn" aria-label="Быстрый переход"><a href="#lashes">Ресницы</a><a href="#education">Обучение</a><a href="#depil">Шугаринг</a><a href="#cosmo">Косметология</a><a href="#hijama">Хиджама</a><a href="#prices">Цены</a></nav>
+<main id="top">
+<section class="hero"><div class="wrap">
+<div><span class="tag" style="color:var(--text)">by KENZHIBAEVNA</span>
+<h1>Красота начинается с заботы о себе</h1>
+<p>Профессиональные процедуры красоты и ухода. Индивидуальный подход, комфорт и внимание к каждой детали.</p>
+<div class="btns"><a class="btn" href="#services">Посмотреть услуги</a><a class="btn alt" href="#booking">Записаться</a></div></div>
+<div class="ph"><a class="igph" href="https://www.instagram.com/kenzhibaevna7?utm_source=ig_web_button_share_sheet&srtk=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener"><b>Процедура красоты</b><small>Примеры работ — в Instagram →</small></a></div></div>
+<div class="wrap"><div class="adv">
+<div class="rv"><b>Индивидуальный подход</b><span>Подбираем процедуру под ваши пожелания</span></div>
+<div class="rv"><b>Профессиональный уход</b><span>Работаем аккуратно и по стандартам</span></div>
+<div class="rv"><b>Комфортная атмосфера</b><span>Спокойствие и уют на каждом визите</span></div>
+<div class="rv"><b>Внимание к деталям</b><span>Важна каждая мелочь в результате</span></div>
+</div></div></section>
+
+<section id="services"><div class="wrap">
+<span class="tag">Каталог</span><h2>Категории услуг</h2><p class="sub">Выберите направление, чтобы увидеть подробное описание и цены.</p>
+<a class="cat rv" href="#lashes"><div class="n">01</div><div class="ph"><a class="igph" href="https://www.instagram.com/kenzhibaevna7?utm_source=ig_web_button_share_sheet&srtk=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener"><b>Наращивание ресниц</b><small>Примеры работ — в Instagram →</small></a></div><div><h3>Наращивание ресниц</h3><p>Классическое и объёмное наращивание, создание выразительного взгляда.</p><em>Подробнее →</em></div></a>
+<a class="cat rv" href="#depil"><div class="n">02</div><div class="ph"><a class="igph" href="https://www.instagram.com/kenzhibaevna7?utm_source=ig_web_button_share_sheet&srtk=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener"><b>Шугаринг</b><small>Примеры работ — в Instagram →</small></a></div><div><h3>Депиляция и шугаринг</h3><p>Удаление нежелательных волос полимерным воском и сахарной пастой.</p><em>Подробнее →</em></div></a>
+<a class="cat rv" href="#cosmo"><div class="n">03</div><div class="ph"><a class="igph" href="https://www.instagram.com/kenzhibaevna7?utm_source=ig_web_button_share_sheet&srtk=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener"><b>Косметология</b><small>Примеры работ — в Instagram →</small></a></div><div><h3>Косметология</h3><p>Чистка лица, «Фарфоровая кукла», уходовые процедуры и маски.</p><em>Подробнее →</em></div></a>
+<a class="cat rv" href="#hijama"><div class="n">04</div><div class="ph"><a class="igph" href="https://www.instagram.com/kenzhibaevna7?utm_source=ig_web_button_share_sheet&srtk=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener"><b>Хиджама</b><small>Примеры работ — в Instagram →</small></a></div><div><h3>Хиджама</h3><p>Процедуры хиджамы по зонам.</p><em>Подробнее →</em></div></a>
+</div></section>
+
+<section id="lashes" class="alt-bg"><div class="wrap">
+<span class="tag">01</span><h2>Наращивание ресниц</h2>
+<div class="promo rv"><div><span class="price">7 000 ₸</span><span class="old">10 000 ₸</span><p style="color:var(--muted)">Акционная стоимость на любое наращивание.</p></div>
+<ul class="list"><li>Любое наращивание — 7 000 ₸ вместо 10 000 ₸</li><li>Снятие с последующим наращиванием — бесплатно</li><li>Снятие без последующего наращивания — 1 000 ₸</li></ul></div>
+<p class="sub">Наращивание ресниц с индивидуальным подбором эффекта, объёма и изгиба. Подчеркнём выразительность взгляда, учитывая форму глаз и ваши пожелания. Вы можете выбрать кукольный, лисий или мокрый эффект, а также объём 2D, 3D или 4D.</p>
+<div class="grid3">
+<div class="card rv"><div class="ph zoom"><a class="igph" href="https://www.instagram.com/kenzhibaevna7?utm_source=ig_web_button_share_sheet&srtk=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener"><b>Кукольный эффект</b><small>Примеры работ — в Instagram →</small></a></div><div class="b"><h3>Кукольный</h3></div></div>
+<div class="card rv"><div class="ph zoom"><a class="igph" href="https://www.instagram.com/kenzhibaevna7?utm_source=ig_web_button_share_sheet&srtk=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener"><b>Лисий эффект</b><small>Примеры работ — в Instagram →</small></a></div><div class="b"><h3>Лисий</h3></div></div>
+<div class="card rv"><div class="ph zoom"><a class="igph" href="https://www.instagram.com/kenzhibaevna7?utm_source=ig_web_button_share_sheet&srtk=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener"><b>Мокрый эффект</b><small>Примеры работ — в Instagram →</small></a></div><div class="b"><h3>Мокрый</h3></div></div></div>
+<h3 style="margin-top:34px">Объёмы</h3><div class="chips"><span>2D</span><span>3D</span><span>4D</span></div>
+<h3>Изгибы</h3><div class="chips"><span>C</span><span>D</span><span>B</span></div>
+</div></section>
+
+<section id="education"><div class="wrap">
+<div class="edu rv"><div class="ph"><a class="igph" href="https://www.instagram.com/kenzhibaevna7?utm_source=ig_web_button_share_sheet&srtk=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener"><b>Обучение наращиванию ресниц</b><small>Примеры работ — в Instagram →</small></a></div>
+<div class="b"><span class="tag">Обучение с нуля</span><h2>Индивидуальное обучение наращиванию ресниц</h2>
+<p style="color:var(--muted)">Освойте основы наращивания ресниц, научитесь подбирать эффекты, работать с инструментами и создавать красивые работы.</p>
+<div class="price" style="margin:10px 0">35 000 ₸ <span style="font-size:20px;color:var(--muted);font-family:Inter">· 5 дней</span></div>
+<h3 style="font-size:22px">Программа обучения</h3>
+<ul class="list"><li>Знакомство с материалами и инструментами</li><li>Санитария, гигиена и организация рабочего места</li><li>Архитектура и моделирование ресниц</li><li>Подбор длины, толщины и изгиба</li><li>Классическое наращивание</li><li>Работа с готовыми пучками</li><li>Создание мокрого эффекта</li><li>Практическая отработка техники</li></ul>
+<h3 style="font-size:22px;margin-top:16px">Условия обучения</h3>
+<ul class="list"><li>Продолжительность — 5 дней</li><li>Теория и практика</li><li>Индивидуальный подход</li><li>Выдача сертификата по окончании обучения</li></ul>
+<p style="margin:14px 0"><b>Стоимость полного курса: 35 000 ₸.</b></p>
+<a class="btn" href="#booking" data-pick="Наращивание ресниц|Индивидуальное обучение наращиванию ресниц">Записаться на обучение</a></div></div>
+</div></section>
+
+<section id="depil" class="alt-bg"><div class="wrap">
+<span class="tag">02</span><h2>Депиляция и шугаринг</h2>
+<div class="big rv"><div class="ph zoom"><a class="igph" href="https://www.instagram.com/kenzhibaevna7?utm_source=ig_web_button_share_sheet&srtk=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener"><b>Процедура шугаринга</b><small>Примеры работ — в Instagram →</small></a></div><div class="b"><p style="font-size:17px;color:var(--text)">Деликатное удаление нежелательных волос с использованием полимерного воска и сахарной пасты. Индивидуальный подход, аккуратная работа и комфорт во время процедуры.</p>
+<ul class="list" style="margin-top:14px"><li>Индивидуальный подбор метода депиляции</li><li>Аккуратная обработка выбранных зон</li><li>Одноразовые расходные материалы</li><li>Рекомендации по уходу за кожей после процедуры</li></ul></div></div>
+<div class="grid2"><div class="rv"><h3>1. Полимерный воск</h3><table class="pr"><tr><td>Глубокое бикини</td><td>7 000 ₸</td></tr><tr><td>Подмышки</td><td>🎁 В подарок</td></tr></table>
+<p class="sub" style="font-size:14px;margin:0 0 16px">Подмышки предоставляются в подарок при процедуре глубокого бикини.</p><div class="card"><div class="ph zoom"><a class="igph" href="https://www.instagram.com/kenzhibaevna7?utm_source=ig_web_button_share_sheet&srtk=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener"><b>Полимерный воск</b><small>Примеры работ — в Instagram →</small></a></div></div></div>
+<div class="rv"><h3>2. Шугаринг (сахарная паста)</h3><table class="pr"><tr><td>Руки до локтя</td><td>5 000 ₸</td></tr><tr><td>Руки полностью</td><td>8 000 ₸</td></tr><tr><td>Ноги до колена</td><td>5 000 ₸</td></tr><tr><td>Ноги полностью</td><td>8 000 ₸</td></tr></table><div class="card"><div class="ph zoom"><a class="igph" href="https://www.instagram.com/kenzhibaevna7?utm_source=ig_web_button_share_sheet&srtk=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener"><b>Сахарная паста</b><small>Примеры работ — в Instagram →</small></a></div></div></div></div>
+</div></section>
+
+<section id="cosmo"><div class="wrap">
+<span class="tag">03</span><h2>Косметология и уход за лицом</h2>
+<p class="sub">Комплекс эстетических процедур по уходу за кожей лица. Подбор ухода с учётом состояния кожи и индивидуальных пожеланий клиента.</p>
+<div class="big rv"><div class="ph zoom"><a class="igph" href="https://www.instagram.com/kenzhibaevna7?utm_source=ig_web_button_share_sheet&srtk=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener"><b>Чистка лица</b><small>Примеры работ — в Instagram →</small></a></div><div class="b"><span class="tag">Процедура №1</span><h3>Комплексная чистка лица (7 этапов)</h3><div class="p">7 000 ₸</div><p>Многоэтапное очищение кожи.</p>
+<ul class="list"><li>Демакияж</li><li>Очищение пенкой</li><li>Скрабирование</li><li>Подготовка гидратирующим средством</li><li>Ультразвуковая чистка</li><li>Механическая и вакуумная чистка по показаниям</li><li>Увлажнение, альгинатная маска и SPF-защита</li></ul></div></div>
+<div class="big rv"><div class="ph zoom"><a class="igph" href="https://www.instagram.com/kenzhibaevna7?utm_source=ig_web_button_share_sheet&srtk=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener"><b>Фарфоровая кукла</b><small>Примеры работ — в Instagram →</small></a></div><div class="b"><span class="tag">Процедура №2</span><h3>Процедура Фарфоровая кукла</h3><div class="p">15 700 ₸ <span style="font-size:15px;color:var(--muted);font-weight:400">за одну процедуру</span></div><div class="p" style="margin-top:0">Курс из 5 процедур — 47 000 ₸</div>
+<p>Процедура направлена на улучшение внешнего вида кожи, придание ей более гладкого, свежего и ухоженного вида.</p>
+<ul class="list"><li>Более ровный и ухоженный внешний вид кожи</li><li>Улучшение визуальной текстуры кожи</li><li>Уменьшение тусклости и придание свежести</li><li>Более гладкое и мягкое ощущение кожи</li><li>Увлажнённый и сияющий вид лица</li><li>Более аккуратный и свежий общий вид</li></ul>
+<p><b>Альгинатная маска в подарок для дополнительного увлажняющего и успокаивающего ухода.</b></p></div></div>
+<div class="big rv"><div class="ph zoom"><a class="igph" href="https://www.instagram.com/kenzhibaevna7?utm_source=ig_web_button_share_sheet&srtk=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener"><b>Dermapen</b><small>Примеры работ — в Instagram →</small></a></div><div class="b"><span class="tag">Процедура №3</span><h3>Капилляротерапия + фракционная мезотерапия</h3><div class="p">17 700 ₸ <span style="font-size:15px;color:var(--muted);font-weight:400">за одну процедуру</span></div><div class="p" style="margin-top:0">Курс из 3 процедур — 50 000 ₸</div>
+<p>Комплексная процедура эстетического ухода за кожей лица, состоящая из двух последовательных этапов.</p>
+<p><b>Первый этап: капилляротерапия (хиджама лица).</b> Процедура с использованием вакуумных банок и поверхностных надрезов кожи.</p>
+<p><b>Второй этап: фракционная мезотерапия.</b> Аппаратная процедура с использованием Dermapen. Во время процедуры применяется косметическое средство Anti-Age от бренда ONmacabim, которое вводится в кожу посредством микроигл. Применение средства таким способом должно соответствовать инструкции производителя.</p>
+<ul class="list"><li>Более свежий и ухоженный вид кожи</li><li>Визуальное улучшение текстуры кожи</li><li>Поддержание увлажнённости и эластичности</li><li>Более ровный и сияющий внешний вид</li></ul></div></div>
+</div></section>
+
+<section id="hijama" class="alt-bg"><div class="wrap">
+<span class="tag">04</span><h2>Хиджама</h2>
+<div class="big rv"><div class="ph zoom"><a class="igph" href="https://www.instagram.com/kenzhibaevna7?utm_source=ig_web_button_share_sheet&srtk=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener"><b>Хиджама</b><small>Примеры работ — в Instagram →</small></a></div><div class="b">
+<div class="p">5 700 ₸ за одну зону</div>
+<p>Хиджама — традиционная процедура, проводимая с помощью специальных вакуумных банок и поверхностных надрезов кожи, через которые удаляется небольшое количество крови.</p>
+<h3 style="font-size:22px;margin-top:12px">Для чего выбирают хиджаму?</h3>
+<ul class="list"><li>Для ощущения лёгкости и расслабления</li><li>Для улучшения общего самочувствия</li><li>Для снятия ощущения напряжения и усталости</li><li>В рамках традиционных практик</li></ul>
+<h3 style="font-size:22px;margin-top:12px">Какие ощущения могут быть после процедуры?</h3>
+<p>После процедуры некоторые отмечают:</p>
+<ul class="list"><li>Расслабление и спокойствие</li><li>Ощущение лёгкости в теле</li><li>Сонливость и желание отдохнуть</li><li>Чувство бодрости</li></ul>
+<p>Реакция организма индивидуальна. Возможны слабость, головокружение и болезненность в местах воздействия.</p>
+<h3 style="font-size:22px">Стоимость</h3><table class="pr"><tr><td>Одна зона</td><td>5 700 ₸</td></tr><tr><td>Курс</td><td>17 700 ₸</td></tr></table></div></div>
+<div class="note rv"><h3>Безопасность и противопоказания</h3>
+<p>Процедура проводится с соблюдением стерильности: используются одноразовые инструменты и расходные материалы, соблюдаются правила инфекционной безопасности. Хиджама — не медицинское лечение и не гарантирует оздоровительного эффекта. Перед записью сообщите мастеру о своём самочувствии, хронических заболеваниях, приёме лекарств (в частности, разжижающих кровь), беременности и других особенностях. При наличии противопоказаний, а при сомнениях — после консультации с врачом, процедура может быть не рекомендована.</p></div>
+</div></section>
+
+<section id="prices"><div class="wrap">
+<span class="tag">Прайс-лист</span><h2>Цены</h2><div id="pricelist"></div>
+<div class="note"><b>Акция на наращивание ресниц:</b> 7 000 ₸ вместо 10 000 ₸. Снятие с последующим наращиванием — бесплатно, без наращивания — 1 000 ₸.</div></div></section>
+
+<section id="booking"><div class="wrap">
+<span class="tag">Онлайн-запись</span><h2>Записаться</h2><p class="sub">Заполните форму — заявка откроется в WhatsApp, останется только отправить сообщение.</p>
+<form id="form" class="rv">
+<label>Имя<input id="fName" required placeholder="Ваше имя"></label>
+<label>Категория услуги<select id="fCat" required></select></label>
+<label>Конкретная процедура<select id="fProc" required></select></label>
+<label class="full">Комментарий<textarea id="fComm" rows="3" placeholder="Пожелания, вопросы"></textarea></label>
+<div class="full"><button class="btn" type="submit">Записаться</button> <span id="fMsg" style="font-size:14px;color:var(--rose);margin-left:10px"></span></div>
+</form></div></section>
+
+<section id="contacts" class="alt-bg"><div class="wrap" style="text-align:center">
+<a class="btn" id="cIg" href="https://www.instagram.com/kenzhibaevna7?utm_source=ig_web_button_share_sheet&srtk=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener">Примеры работ в Instagram</a></div></section>
+</main>
+
+<div class="cta"><a class="btn alt" href="#contacts">Контакты</a><a class="btn" href="#booking">Записаться</a></div>
+<button class="up" id="up" aria-label="Наверх">↑</button>
+<script>
+/* ===== НАСТРОЙКИ ВЛАДЕЛЬЦА — редактируйте здесь ===== */
+const BRAND = "by KENZHIBAEVNA", BRAND_HTML = '<small>by</small>KENZHIBAEVNA';
+const INSTAGRAM_URL = "https://www.instagram.com/kenzhibaevna7?utm_source=ig_web_button_share_sheet&srtk=ZDNlZDc0MzIxNw==";
+const WHATSAPP_NUMBER = "77756084292";  // только цифры
+
+const PRICES = {
+ "Наращивание ресниц":[["Любое наращивание (акция, вместо 10 000 ₸)","7 000 ₸"],["Снятие с последующим наращиванием","бесплатно"],["Снятие без наращивания","1 000 ₸"],["Индивидуальное обучение наращиванию ресниц (5 дней)","35 000 ₸"]],
+ "Депиляция и шугаринг":[["Глубокое бикини (полимерный воск, подмышки в подарок)","7 000 ₸"],["Руки до локтя (шугаринг)","5 000 ₸"],["Руки полностью (шугаринг)","8 000 ₸"],["Ноги до колена (шугаринг)","5 000 ₸"],["Ноги полностью (шугаринг)","8 000 ₸"]],
+ "Косметология":[["Комплексная чистка лица (7 этапов)","7 000 ₸"],["Фарфоровая кукла — 1 процедура","15 700 ₸"],["Фарфоровая кукла — курс из 5 процедур","47 000 ₸"],["Капилляротерапия + фракционная мезотерапия — 1 процедура","17 700 ₸"],["Капилляротерапия + фракционная мезотерапия — курс из 3 процедур","50 000 ₸"]],
+ "Хиджама":[["Одна зона","5 700 ₸"],["Курс","17 700 ₸"]]
+};
+const PROCS = {
+ "Наращивание ресниц":["Наращивание ресниц (акция 7 000 ₸)","Снятие ресниц","Индивидуальное обучение наращиванию ресниц"],
+ "Депиляция и шугаринг":["Глубокое бикини (полимерный воск)","Руки до локтя","Руки полностью","Ноги до колена","Ноги полностью"],
+ "Косметология":["Комплексная чистка лица (7 этапов)","Фарфоровая кукла","Капилляротерапия + фракционная мезотерапия"],
+ "Хиджама":["Хиджама (одна зона)","Хиджама (курс)"]
+};
+/* ===== КОНЕЦ НАСТРОЕК ===== */
+
+const $ = (s, r=document) => r.querySelector(s), $$ = (s, r=document) => [...r.querySelectorAll(s)];
+$$("[data-brand]").forEach(e => e.innerHTML = BRAND_HTML); document.title = "by Kenzhibaevna — центр эстетической красоты";
+
+/* меню */
+const menu=$("#menu"), burger=$("#burger");
+burger.onclick=()=>{menu.classList.toggle("open");burger.classList.toggle("open")};
+$$("#menu a").forEach(a=>a.onclick=()=>{menu.classList.remove("open");burger.classList.remove("open")});
+
+/* прайс */
+$("#pricelist").innerHTML = Object.entries(PRICES).map(([c,rows])=>`<h3>${c}</h3><table class="pr">${rows.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`).join("")}</table>`).join("");
+
+/* форма */
+const fCat=$("#fCat"), fProc=$("#fProc");
+fCat.innerHTML=Object.keys(PROCS).map(c=>`<option>${c}</option>`).join("");
+const fillProc=()=>fProc.innerHTML=PROCS[fCat.value].map(p=>`<option>${p}</option>`).join("");
+fCat.onchange=fillProc; fillProc();
+$$("[data-pick]").forEach(a=>a.addEventListener("click",()=>{const [c,p]=a.dataset.pick.split("|");fCat.value=c;fillProc();fProc.value=p}));
+const waNum = WHATSAPP_NUMBER.replace(/\D/g,"");
+$("#form").onsubmit=e=>{e.preventDefault();
+ const text=`Здравствуйте! Заявка на запись (${BRAND}):\nИмя: ${$("#fName").value}\nКатегория: ${fCat.value}\nПроцедура: ${fProc.value}\nКомментарий: ${$("#fComm").value||"—"}`;
+ if(waNum){window.open("https://wa.me/"+waNum+"?text="+encodeURIComponent(text),"_blank");$("#fMsg").textContent="Открываем WhatsApp…"}
+ else{(navigator.clipboard?navigator.clipboard.writeText(text):Promise.reject()).catch(()=>{});window.open(INSTAGRAM_URL,"_blank");$("#fMsg").textContent="Заявка скопирована — отправьте её нам в Instagram."}
+};
+
+/* кнопка «наверх» и подсветка активного раздела */
+const up=$("#up"); up.onclick=()=>scrollTo({top:0,behavior:"smooth"});
+const links=$$("#menu a[href^='#'],#qn a"), secs=$$("main section[id]");
+addEventListener("scroll",()=>{up.classList.toggle("on",scrollY>600);let cur="";secs.forEach(x=>{if(x.getBoundingClientRect().top<160)cur=x.id});links.forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+cur))},{passive:true});
+/* появление при прокрутке */
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}}),{threshold:.12});
+$$(".rv").forEach(e=>io.observe(e));
+</script>
+</body>
+</html>
